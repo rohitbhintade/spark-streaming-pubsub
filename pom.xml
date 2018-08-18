@@ -10,7 +10,6 @@
 
     <properties>
         <spark.version>2.3.0</spark.version>
-      <!--  <spark.version>2.2.0.2.6.4.0-91</spark.version>-->
         <spark.scope>provided</spark.scope>
         <scala.version>2.11.8</scala.version>
         <scala.binary.version>2.11</scala.binary.version>
@@ -23,13 +22,6 @@
         <skipDeploy>false</skipDeploy>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
-
-    <repositories>
-        <repository>
-            <id>hortonworks</id>
-            <url>http://repo.hortonworks.com/content/repositories/releases/</url>
-        </repository>
-    </repositories>
 
     <dependencies>
         <!-- https://mvnrepository.com/artifact/com.google.guava/guava -->
@@ -50,12 +42,6 @@
                     <groupId>com.google.guava</groupId>
                 </exclusion>
             </exclusions>
-            <!-- <exclusions>
-                 <exclusion>
-                     <groupId>com.google.guava</groupId>
-                     <artifactId>guava</artifactId>
-                 </exclusion>
-             </exclusions>-->
         </dependency>
 
         <dependency>
@@ -105,45 +91,6 @@
             <version>${spark.version}</version>
             <scope>${spark.scope}</scope>
         </dependency>
-
-        <!-- Test Dependencies
-        <dependency>
-            <groupId>org.apache.spark</groupId>
-            <artifactId>spark-core_${scala.binary.version}</artifactId>
-            <version>${spark.version}</version>
-            <type>test-jar</type>
-            <scope>test</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>org.apache.spark</groupId>
-            <artifactId>spark-catalyst_${scala.binary.version}</artifactId>
-            <version>${spark.version}</version>
-            <type>test-jar</type>
-            <scope>test</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>org.apache.spark</groupId>
-            <artifactId>spark-sql_${scala.binary.version}</artifactId>
-            <version>${spark.version}</version>
-            <type>test-jar</type>
-            <scope>test</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>org.scalacheck</groupId>
-            <artifactId>scalacheck_${scala.binary.version}</artifactId>
-            <version>1.12.5</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.scalatest</groupId>
-            <artifactId>scalatest_${scala.binary.version}</artifactId>
-            <version>2.2.6</version>
-            <scope>test</scope>
-        </dependency>
-        -->
     </dependencies>
 
     <build>
@@ -212,31 +159,6 @@
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-install-plugin</artifactId>
                     <version>2.5.2</version>
-                </plugin>
-
-                <plugin>
-                    <groupId>org.scalatest</groupId>
-                    <artifactId>scalatest-maven-plugin</artifactId>
-                    <version>1.0</version>
-                    <configuration>
-                        <systemProperties>
-                            <java.awt.headless>true</java.awt.headless>
-                            <java.io.tmpdir>${project.build.directory}/tmp</java.io.tmpdir>
-                        </systemProperties>
-                        <stdout>D</stdout>
-                        <reportsDirectory>${project.build.directory}/surefire-reports</reportsDirectory>
-                        <junitxml>.</junitxml>
-                        <filereports>WDF TestSuite.txt</filereports>
-                        <argLine>-Xmx2g -XX:MaxPermSize=512m</argLine>
-                    </configuration>
-                    <executions>
-                        <execution>
-                            <id>test</id>
-                            <goals>
-                                <goal>test</goal>
-                            </goals>
-                        </execution>
-                    </executions>
                 </plugin>
 
             </plugins>
