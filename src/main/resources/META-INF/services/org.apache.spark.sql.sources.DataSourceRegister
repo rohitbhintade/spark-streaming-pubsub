@@ -1,0 +1,2 @@
+org.apache.spark.sql.pubsub.sourceV1.PubSubSourceProvider
+org.apache.spark.sql.pubsub.sourceV2.PubSubStreamingSource
