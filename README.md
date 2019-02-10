@@ -1,1 +1,1 @@
-# spark-streaming-pubsub
+# spark-structured-streaming-pubsub-connetor
